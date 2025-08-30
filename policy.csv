@@ -1,0 +1,19 @@
+# Role inheritance
+g, admin, premium
+g, premium, free
+
+# Base permissions for free role
+p, free, github, get
+p, free, dashboard, get
+p, free, static, get
+p, free, auth/github, get
+p, free, auth/github/callback, get
+p, free, test-role, get
+
+# Additional permissions for premium role
+p, premium, calendar/event, post
+
+# Public routes (no auth needed)
+p, *, /, get
+p, *, auth/google, get
+p, *, auth/google/callback, get
